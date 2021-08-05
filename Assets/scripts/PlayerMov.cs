@@ -26,7 +26,7 @@ public class PlayerMov : MonoBehaviour
             animator.SetBool("izq", false);
             animator.SetBool("derecha", false);
             animator.SetBool("abajo", false);
-                animator.SetBool("arriba", true);
+            animator.SetBool("arriba", true);
 
         }
         else

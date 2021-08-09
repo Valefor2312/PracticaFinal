@@ -91,5 +91,9 @@ public class Romano : MonoBehaviour
                 izquierda = true;
             }
         }
+        if (collision.tag=="player")
+        {
+            //ataque al jugador
+        }
     }
 }

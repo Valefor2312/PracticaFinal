@@ -7,6 +7,7 @@ public class Trampa : MonoBehaviour
     public float CDtrampaAbajo;
     public bool trampaAbajo;
     public float CDtrampaArriba;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,10 @@ public class Trampa : MonoBehaviour
         {
             if (CDtrampaAbajo > 2)
             {
+                animator.SetBool("abajo", false);
                 CDtrampaAbajo = 0;
                 trampaAbajo = false;
+                
             }
             CDtrampaAbajo += Time.deltaTime;
         }
@@ -29,12 +32,20 @@ public class Trampa : MonoBehaviour
         {
             if (CDtrampaArriba>2)
             {
+                animator.SetBool("abajo", true);
                 CDtrampaArriba = 0;
                 trampaAbajo = true;
-                //daño
+               
             }
             CDtrampaArriba += Time.deltaTime;
         }
         
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag=="Player"&&trampaAbajo==false)
+        {
+            //Hacer daño
+        }
     }
 }

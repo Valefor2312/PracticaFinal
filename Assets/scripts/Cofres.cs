@@ -5,30 +5,40 @@ using UnityEngine;
 public class Cofres : MonoBehaviour
 {
     public bool abierto;
-    public GameObject[] Drop;
+    public GameObject[] drop;
+    public Animator animator;
+    bool dropped;
 
-    
     // Start is called before the first frame update
     void Start()
     {
         abierto = false;
+        animator.SetBool("abierto", false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (abierto==true)
+        if (abierto == true && dropped == false)
         {
-            Instantiate(gameObject[Random.Range()], transform.position, transform.rotation);//meter lo que dropea que solo dropee una vez
+
+            Invoke("Drop", 1.2f);
+
+            dropped = true;
         }
-        
-        
+
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag =="Player")
+        if (collision.tag == "Player")
         {
             abierto = true;
+            animator.SetBool("abierto", true);
         }
+    }
+    public void Drop()
+    {
+        Instantiate(drop[Random.Range(0, drop.Length)], transform.position, transform.rotation);
     }
 }

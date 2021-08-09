@@ -6,6 +6,7 @@ public class PlayerMov : MonoBehaviour
 {
     public float speed = 2;
     public Animator animator;
+    public int llaves;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class PlayerMov : MonoBehaviour
     void Update()
     {
         Mov();
-        ;
+        //ataque del jugador
     }
     public void Mov()
     {
@@ -71,6 +72,17 @@ public class PlayerMov : MonoBehaviour
         else
         {          
             animator.SetBool("izq", false);     
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag=="Salida")
+        {
+            if (llaves==2)
+            {
+                //salir/ganar
+                llaves = 0;
+            }
         }
     }
 }

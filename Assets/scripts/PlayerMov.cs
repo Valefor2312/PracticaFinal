@@ -1,23 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMov : MonoBehaviour
 {
     public float speed = 2;
     public Animator animator;
     public int llaves;
+    public bool ataque;
+    public int vidas=10;
+    int vidasMax;
+    public Image barraVida;
     // Start is called before the first frame update
     void Start()
     {
-
+        vidasMax = vidas;
+        barraVida.fillAmount = vidas / vidasMax;
     }
 
     // Update is called once per frame
     void Update()
     {
         Mov();
-        //ataque del jugador
+        Ataque();
     }
     public void Mov()
     {
@@ -74,6 +80,13 @@ public class PlayerMov : MonoBehaviour
             animator.SetBool("izq", false);     
         }
     }
+    public void Ataque()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ataque = true;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag=="Salida")
@@ -84,5 +97,6 @@ public class PlayerMov : MonoBehaviour
                 llaves = 0;
             }
         }
+        
     }
 }

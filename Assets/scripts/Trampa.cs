@@ -8,10 +8,11 @@ public class Trampa : MonoBehaviour
     public bool trampaAbajo;
     public float CDtrampaArriba;
     public Animator animator;
+    private PlayerMov player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMov>();
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class Trampa : MonoBehaviour
             if (CDtrampaAbajo > 2)
             {
                 animator.SetBool("abajo", false);
-                CDtrampaAbajo = 0;
+                CDtrampaArriba = 0;
                 trampaAbajo = false;
                 
             }
@@ -33,7 +34,7 @@ public class Trampa : MonoBehaviour
             if (CDtrampaArriba>2)
             {
                 animator.SetBool("abajo", true);
-                CDtrampaArriba = 0;
+                CDtrampaAbajo = 0;
                 trampaAbajo = true;
                
             }
@@ -45,7 +46,7 @@ public class Trampa : MonoBehaviour
     {
         if (collision.tag=="Player"&&trampaAbajo==false)
         {
-            //Hacer daño
+            player.vidas -= 1;
         }
     }
 }

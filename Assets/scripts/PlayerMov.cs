@@ -7,6 +7,7 @@ public class PlayerMov : MonoBehaviour
     public float speed = 2;
     public Animator animator;
     public int llaves;
+    public bool ataque;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class PlayerMov : MonoBehaviour
     void Update()
     {
         Mov();
-        //ataque del jugador
+        Ataque();
     }
     public void Mov()
     {
@@ -72,6 +73,13 @@ public class PlayerMov : MonoBehaviour
         else
         {          
             animator.SetBool("izq", false);     
+        }
+    }
+    public void Ataque()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ataque = true;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

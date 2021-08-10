@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Romano : MonoBehaviour
+public class Romaano : MonoBehaviour
 {
     public float speed = 2;
     public int value;
     public bool izquierda, abajo, derecha, arriba;
     GameObject player;
     public float rangoDeVision = 2;
+    public int vidas = 4;
     // Start is called before the first frame update
     void Start()
     {
@@ -91,7 +92,7 @@ public class Romano : MonoBehaviour
                 izquierda = true;
             }
         }
-        if (collision.tag=="player")
+        if (collision.tag == "player")
         {
             //ataque al jugador
         }

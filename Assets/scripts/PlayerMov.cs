@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMov : MonoBehaviour
 {
@@ -8,10 +9,14 @@ public class PlayerMov : MonoBehaviour
     public Animator animator;
     public int llaves;
     public bool ataque;
+    public int vidas=10;
+    int vidasMax;
+    public Image barraVida;
     // Start is called before the first frame update
     void Start()
     {
-
+        vidasMax = vidas;
+        barraVida.fillAmount = vidas / vidasMax;
     }
 
     // Update is called once per frame
@@ -92,5 +97,6 @@ public class PlayerMov : MonoBehaviour
                 llaves = 0;
             }
         }
+        
     }
 }

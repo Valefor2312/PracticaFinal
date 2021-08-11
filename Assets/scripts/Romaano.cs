@@ -8,11 +8,16 @@ public class Romaano : MonoBehaviour
     public int value;
     public bool izquierda, abajo, derecha, arriba;
     GameObject player;
+    private PlayerMov playermov;
     public float rangoDeVision = 2;
     public int vidas = 4;
+    public int dañoDeAtaque = 2;
+    public float cdActual;
+    public float cdAtaque = 2;
     // Start is called before the first frame update
     void Start()
     {
+        playermov = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMov>();
         player = GameObject.FindGameObjectWithTag("Player");
         value = Random.Range(0, 4);
 
@@ -37,6 +42,7 @@ public class Romaano : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cdActual += Time.deltaTime;
         if (Vector3.Distance(this.transform.position, player.transform.position) <= rangoDeVision)
         {
             this.transform.position = Vector3.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
@@ -92,9 +98,21 @@ public class Romaano : MonoBehaviour
                 izquierda = true;
             }
         }
-        if (collision.tag == "player")
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag=="Player")
         {
-            //ataque al jugador
+            if (cdActual>cdAtaque)
+            {
+                cdActual = 0;
+                playermov.vidas -= dañoDeAtaque;
+                //anim de ataque
+                //anim daño player
+            }
+           
+
         }
+        
     }
 }

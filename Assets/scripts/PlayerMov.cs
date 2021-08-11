@@ -12,11 +12,17 @@ public class PlayerMov : MonoBehaviour
     public int vidas=10;
     int vidasMax;
     public Image barraVida;
+    public int dañoDeAtaque = 3;
+    private Romaano romano;
+    public GameObject barril;
+    public float cdActual;
+    public float cdAtaque = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
+        romano = GameObject.FindGameObjectWithTag("Romano").GetComponent<Romaano>();
         vidasMax = vidas;
-        barraVida.fillAmount = vidas / vidasMax;
+       // barraVida.fillAmount = vidas / vidasMax;
     }
 
     // Update is called once per frame
@@ -82,10 +88,19 @@ public class PlayerMov : MonoBehaviour
     }
     public void Ataque()
     {
+        cdActual += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ataque = true;
+            if (cdActual>cdAtaque)
+            {
+                cdActual = 0;
+                ataque = true;
+                //anim daño de ataque
+            }
+           
         }
+        
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -97,6 +112,15 @@ public class PlayerMov : MonoBehaviour
                 llaves = 0;
             }
         }
+       
         
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag=="Romano"&&ataque==true)
+        {
+            romano.vidas -= dañoDeAtaque;
+            //anim daño enemigo
+        }
     }
 }

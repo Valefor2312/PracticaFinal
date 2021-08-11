@@ -8,11 +8,13 @@ public class Barril : MonoBehaviour
     public GameObject[] Drop;
     public Animator animator;
     public bool dropped;
+    private PlayerMov player;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMov>();
         abierto = false;
         animator.SetBool("abierto", false);
     }
@@ -30,7 +32,7 @@ public class Barril : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && player.ataque == true)
         {
             abierto = true;
             animator.SetBool("abierto", true);

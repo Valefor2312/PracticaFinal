@@ -9,6 +9,7 @@ public class Trampa : MonoBehaviour
     public float CDtrampaArriba;
     private PlayerMov player;
     public GameObject pinchosArriba;
+    public bool daño;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,13 +43,26 @@ public class Trampa : MonoBehaviour
             }
             CDtrampaArriba += Time.deltaTime;
         }
+        if (daño==true)
+        {
+            player.vidas -= 1;
+            player.barraVida.fillAmount = player.vidas / player.vidasMax;
+        }
         
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag=="Player"&&trampaAbajo==false)
         {
-            player.vidas -= 1;
+            daño = true;
+            
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player" && trampaAbajo == false)
+        {
+            daño = false;
         }
     }
 }

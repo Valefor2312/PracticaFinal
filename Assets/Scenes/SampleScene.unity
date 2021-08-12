@@ -351,6 +351,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8ee76d099c4c8a4a8d2780bcb25a531, type: 3}
+--- !u!114 &439138981 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6630618102043397856, guid: 0f887362b3fed914898c7b083b92a6c7, type: 3}
+  m_PrefabInstance: {fileID: 2113338148}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,7 +1446,8 @@ MonoBehaviour:
   llaves: 0
   ataque: 0
   vidas: 10
-  barraVida: {fileID: 0}
+  vidasMax: 0
+  barraVida: {fileID: 439138981}
   "da\xF1oDeAtaque": 3
   cdActual: 0
   cdAtaque: 1.5

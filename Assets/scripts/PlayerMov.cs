@@ -10,7 +10,7 @@ public class PlayerMov : MonoBehaviour
     public int llaves;
     public bool ataque;
     public int vidas = 10;
-    int vidasMax;
+    public int vidasMax;
     public Image barraVida;
     public int dañoDeAtaque = 3;
     private Romaano romano;
@@ -27,7 +27,7 @@ public class PlayerMov : MonoBehaviour
         transform.position = new Vector3(-18, -10.5f);
         lobo = GameObject.FindGameObjectWithTag("Lobo").GetComponent<Lobo>();
         vidasMax = vidas;
-       // barraVida.fillAmount = vidas / vidasMax;
+       barraVida.fillAmount = vidas / vidasMax;
     }
 
     // Update is called once per frame
@@ -113,7 +113,7 @@ public class PlayerMov : MonoBehaviour
                 //anim daño de ataque
             }
 
-
+             
         }
 
 

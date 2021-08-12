@@ -49,7 +49,8 @@ public class Lobo : MonoBehaviour
                 {
                     cdActual = 0;
                     playermov.vidas -= dañoDeAtaque;
-                    animator.SetBool("ataque", true);
+                    playermov.barraVida.fillAmount = playermov.vidas / playermov.vidasMax;
+                animator.SetBool("ataque", true);
                     //anim daño player
                 }
                 else

@@ -8,6 +8,8 @@ TagManager:
   - vida
   - Romano
   - Salida
+  - Monedas
+  - Comida
   layers:
   - Default
   - TransparentFX

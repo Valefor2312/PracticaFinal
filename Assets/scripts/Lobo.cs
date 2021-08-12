@@ -38,7 +38,7 @@ public class Lobo : MonoBehaviour
             //anim muerte
             Destroy(this.gameObject);
         }
-        animator.SetBool("ataque", false);
+      
         cdActual += Time.deltaTime;
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -51,6 +51,10 @@ public class Lobo : MonoBehaviour
                     playermov.vidas -= dañoDeAtaque;
                     animator.SetBool("ataque", true);
                     //anim daño player
+                }
+                else
+                {
+                animator.SetBool("ataque", false);
                 }
         }
     }

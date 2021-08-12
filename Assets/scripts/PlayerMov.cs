@@ -9,32 +9,39 @@ public class PlayerMov : MonoBehaviour
     public Animator animator;
     public int llaves;
     public bool ataque;
-    public int vidas=10;
+    public int vidas = 10;
     int vidasMax;
     public Image barraVida;
     public int dañoDeAtaque = 3;
     private Romaano romano;
-    public GameObject barril;
     public float cdActual;
     public float cdAtaque = 1.5f;
+    public int comida = 0;
+    public int monedas = 0;
+    public GameObject muerte;
+    public bool muerto;
     // Start is called before the first frame update
     void Start()
     {
         transform.position = new Vector3(-18, -10.5f);
         romano = GameObject.FindGameObjectWithTag("Romano").GetComponent<Romaano>();
         vidasMax = vidas;
-       // barraVida.fillAmount = vidas / vidasMax;
+        // barraVida.fillAmount = vidas / vidasMax;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Mov();
-        Ataque();
-        if (vidas==0)
+        if (muerto == false)
         {
-            //instanciar anim de muerte
-            Destroy(this.gameObject);
+            Mov();
+            Ataque();
+        }
+
+        if (vidas == 0)
+        {
+            Instantiate(muerte, this.transform.position, this.transform.rotation);
+            muerto = true;
         }
     }
     public void Mov()
@@ -88,42 +95,54 @@ public class PlayerMov : MonoBehaviour
             animator.SetBool("abajo", false);
         }
         else
-        {          
-            animator.SetBool("izq", false);     
+        {
+            animator.SetBool("izq", false);
         }
     }
     public void Ataque()
     {
+        
         cdActual += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (cdActual>cdAtaque)
+        if (cdActual >= cdAtaque)
+        { 
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 cdActual = 0;
                 ataque = true;
                 //anim daño de ataque
             }
-           
+
+
         }
-        
-        
+
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag=="Salida")
+        if (collision.tag == "Salida")
         {
-            if (llaves==2)
+            if (llaves == 2)
             {
                 //salir/ganar
                 llaves = 0;
             }
         }
-       
-        
+        if (collision.tag == "Comida")
+        {
+            comida++;
+            Destroy(collision.gameObject);
+        }
+        if (collision.tag == "Monedas")
+        {
+            monedas++;
+            Destroy(collision.gameObject);
+        }
+
+
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag=="Romano"&&ataque==true)
+        if (collision.tag == "Romano" && ataque == true)
         {
             romano.vidas -= dañoDeAtaque;
             //anim daño enemigo

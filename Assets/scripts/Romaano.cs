@@ -10,7 +10,7 @@ public class Romaano : MonoBehaviour
     GameObject player;
     private PlayerMov playermov;
     public float rangoDeVision = 2;
-    public int vidas = 4;
+    public int vidas = 8;
     public int dañoDeAtaque = 2;
     public float cdActual;
     public float cdAtaque = 2;
@@ -42,6 +42,11 @@ public class Romaano : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (vidas==0)
+        {
+            //instanciar anim muerte
+            Destroy(this.gameObject);
+        }
         cdActual += Time.deltaTime;
         if (Vector3.Distance(this.transform.position, player.transform.position) <= rangoDeVision)
         {

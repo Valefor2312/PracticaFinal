@@ -20,6 +20,7 @@ public class PlayerMov : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.position = new Vector3(-18, -10.5f);
         romano = GameObject.FindGameObjectWithTag("Romano").GetComponent<Romaano>();
         vidasMax = vidas;
        // barraVida.fillAmount = vidas / vidasMax;
@@ -30,6 +31,11 @@ public class PlayerMov : MonoBehaviour
     {
         Mov();
         Ataque();
+        if (vidas==0)
+        {
+            //instanciar anim de muerte
+            Destroy(this.gameObject);
+        }
     }
     public void Mov()
     {

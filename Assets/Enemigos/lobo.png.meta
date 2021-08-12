@@ -178,8 +178,8 @@ TextureImporter:
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 0
-  alphaIsTransparency: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -236,195 +236,6 @@ TextureImporter:
       bones: []
       spriteID: cd7e30b842a986f40800000000000000
       internalID: 5721992808316004316
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lobo_1
-      rect:
-        serializedVersion: 2
-        x: 589
-        y: 559
-        width: 90
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 437dac7ed1ad91420800000000000000
-      internalID: 2601350081760909108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lobo_2
-      rect:
-        serializedVersion: 2
-        x: 149
-        y: 518
-        width: 40
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7944add76f7a1d540800000000000000
-      internalID: 5030986935864804503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lobo_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 518
-        width: 38
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2b3f88f68700ab300800000000000000
-      internalID: 268527645049287602
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lobo_4
-      rect:
-        serializedVersion: 2
-        x: 234
-        y: 518
-        width: 42
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5acc569693fc046d0800000000000000
-      internalID: -3008176705595126619
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lobo_5
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 518
-        width: 42
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1b7ceb0131387300800000000000000
-      internalID: 250003866042268447
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lobo_6
-      rect:
-        serializedVersion: 2
-        x: 326
-        y: 518
-        width: 40
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a965e3e61d41ac090800000000000000
-      internalID: -8013569697222076774
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lobo_7
-      rect:
-        serializedVersion: 2
-        x: 369
-        y: 518
-        width: 38
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dab2cae5813df36a0800000000000000
-      internalID: -6467218438259725395
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lobo_8
-      rect:
-        serializedVersion: 2
-        x: 415
-        y: 519
-        width: 49
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 035172eec7b25beb0800000000000000
-      internalID: -4704806420147137232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lobo_9
-      rect:
-        serializedVersion: 2
-        x: 471
-        y: 518
-        width: 55
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c53e7d969a5d79750800000000000000
-      internalID: 6311748326384984924
       vertices: []
       indices: 
       edges: []
@@ -690,7 +501,7 @@ TextureImporter:
         width: 690
         height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -698,27 +509,6 @@ TextureImporter:
       bones: []
       spriteID: b9569474d9aa70030800000000000000
       internalID: 3460922431140095387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lobo_23
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 345
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d272efd559eebfc0800000000000000
-      internalID: -3477085307245792553
       vertices: []
       indices: 
       edges: []

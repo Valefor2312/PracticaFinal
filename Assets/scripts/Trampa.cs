@@ -22,7 +22,7 @@ public class Trampa : MonoBehaviour
         {
             if (CDtrampaAbajo > 2)
             {
-                pinchosArriba.SetActive(false);
+                pinchosArriba.SetActive(true);
                 CDtrampaArriba = 0;
                 trampaAbajo = false;
                 
@@ -33,7 +33,8 @@ public class Trampa : MonoBehaviour
         {
             if (CDtrampaArriba>2)
             {
-                pinchosArriba.SetActive(true);
+                pinchosArriba.SetActive(false);
+               
                 CDtrampaAbajo = 0;
                 trampaAbajo = true;
                 

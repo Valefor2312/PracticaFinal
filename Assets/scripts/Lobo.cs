@@ -33,7 +33,7 @@ public class Lobo : MonoBehaviour
             animator.SetBool("dentroDeRango", false);
             
         }
-        if (vidas == 0)
+        if (vidas <= 0)
         {
             //anim muerte
             Destroy(this.gameObject);

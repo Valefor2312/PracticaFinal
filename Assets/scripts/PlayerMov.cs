@@ -14,6 +14,7 @@ public class PlayerMov : MonoBehaviour
     public Image barraVida;
     public int dañoDeAtaque = 3;
     private Romaano romano;
+    private Lobo lobo;
     public float cdActual;
     public float cdAtaque = 1.5f;
     public int comida = 0;
@@ -24,9 +25,9 @@ public class PlayerMov : MonoBehaviour
     void Start()
     {
         transform.position = new Vector3(-18, -10.5f);
-        romano = GameObject.FindGameObjectWithTag("Romano").GetComponent<Romaano>();
+        lobo = GameObject.FindGameObjectWithTag("Lobo").GetComponent<Lobo>();
         vidasMax = vidas;
-        // barraVida.fillAmount = vidas / vidasMax;
+       // barraVida.fillAmount = vidas / vidasMax;
     }
 
     // Update is called once per frame
@@ -38,7 +39,7 @@ public class PlayerMov : MonoBehaviour
             Ataque();
         }
 
-        if (vidas == 0)
+        if (vidas <= 0)
         {
             Instantiate(muerte, this.transform.position, this.transform.rotation);
             muerto = true;
@@ -142,9 +143,9 @@ public class PlayerMov : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Romano" && ataque == true)
+        if (collision.tag == "Lobo" && ataque == true)
         {
-            romano.vidas -= dañoDeAtaque;
+            lobo.vidas -= dañoDeAtaque;
             //anim daño enemigo
         }
     }

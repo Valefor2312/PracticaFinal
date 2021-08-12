@@ -10,6 +10,7 @@ TagManager:
   - Salida
   - Monedas
   - Comida
+  - Lobo
   layers:
   - Default
   - TransparentFX
